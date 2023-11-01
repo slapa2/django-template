@@ -41,6 +41,13 @@ INSTALLED_APPS = [
     'utils',
 ]
 
+DEV_APPS = [
+    'django_extensions',
+]
+
+if os.environ.get('DEV') == 'true':
+    INSTALLED_APPS.extend(DEV_APPS)
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
